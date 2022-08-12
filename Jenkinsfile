@@ -6,7 +6,7 @@ pipeline {
   stages {         
     stage("Git Checkout"){           
       steps{                
-	git credentialsId: 'pramodensbm@gmail.com/******', url: 'https://github.com/sanjranasinghe/Allianz-Technology.git'                 
+	   git branch: 'main', url: 'https://github.com/sanjranasinghe/Allianz-Technology.git'
 	echo 'Git Checkout Completed'            
       }        
   }
