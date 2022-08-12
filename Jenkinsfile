@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/ismailyenigul/hacicenkins.git', branch: 'master', credentialsId: 'ismailyenigul-github-user-token'])
+        git([url: 'https://github.com/sanjranasinghe/Allianz-Technology.git', branch: 'main', credentialsId: '	c535657d-2c30-46b9-93c5-6fdcea0381ff'])
       }
       }
       }
