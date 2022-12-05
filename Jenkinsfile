@@ -17,19 +17,14 @@ pipeline {
       }           
     }
 	
-	stage('Login to Docker Hub') {         
-      steps{                            
-	sh 'echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
-	echo 'Login Completed'                
-      }           
-    }
-
-stage('Push Image to Docker Hub') {         
-      steps{                            
-	sh 'docker push nusanj/alianz:$BUILD_NUMBER'                 
-	echo 'Push Image Completed'       
-      }           
-    }      	
+ stage('Deploy') {
+            steps {
+                script{
+                        docker.withRegistry('public.ecr.aws/j1y6k7y3/test-flightapi', 'ecr:eu-west-2') {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("latest")
+                    }
+                }
 }
 
 }
