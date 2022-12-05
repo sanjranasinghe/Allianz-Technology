@@ -19,10 +19,10 @@ pipeline {
 	
  stage('Deploy') {
             steps {
-                docker.withRegistry('public.ecr.aws/j1y6k7y3/test-flightapi', 'ecr:eu-west-2') {
+                docker.withRegistry('public.ecr.aws/j1y6k7y3/test-flightapi', 'ecr:eu-west-2') 
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
-                }
+                
 }
 
 }
