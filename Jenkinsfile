@@ -5,7 +5,8 @@ pipeline {
         AWS_DEFAULT_REGION="eu-west-2"
         IMAGE_REPO_NAME="jenkins-pipeline"
         IMAGE_TAG="v1"
-        REPOSITORY_URI = "public.ecr.aws/j1y6k7y3/test-flightapi"
+        REPOSITORY_URI = "715451173743.dkr.ecr.eu-west-2.amazonaws.com
+"
     }
    
     stages {
@@ -13,7 +14,7 @@ pipeline {
          stage('Logging into AWS ECR') {
             steps {
                 script {
-                sh """aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"""
+                sh """aws ecr get-login --region eu-west-2 | docker login --username AWS --password-stdin 715451173743.dkr.ecr.eu-west-2.amazonaws.com"""
                 }
                  
             }
