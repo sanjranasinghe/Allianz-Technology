@@ -5,8 +5,8 @@ pipeline {
         AWS_DEFAULT_REGION="eu-west-2"
         IMAGE_REPO_NAME="jenkins-pipeline"
         IMAGE_TAG="v1"
-        REPOSITORY_URI = "715451173743.dkr.ecr.eu-west-2.amazonaws.com
-"
+        REPOSITORY_URI = "715451173743.dkr.ecr.eu-west-2.amazonaws.com"
+
     }
    
     stages {
